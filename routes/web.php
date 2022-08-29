@@ -21,3 +21,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('generatetoken', [\App\Http\Controllers\SubscriptionController::class, 'generateClientToken']);
+Route::post('subscribe', [\App\Http\Controllers\SubscriptionController::class, 'subscribe']);
+Route::post('subscription/cancel', [\App\Http\Controllers\SubscriptionController::class,'cancelSubscription']);
+Route::get('test', function () {
+    return view('test');
+});

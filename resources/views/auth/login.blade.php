@@ -10,18 +10,18 @@
             <div class="w-100 align-self-end pt-1 pt-md-4 pb-4" style="max-width: 526px;">
                 <h1 class="text-center text-xl-start">Welcome Back</h1>
                 <p class="text-center text-xl-start pb-3 mb-3">Don’t have an account yet? <a href="/register">Register here.</a></p>
-                <form class="needs-validation mb-2" novalidate method="post" action="/register">
+                <form class="needs-validation mb-2" novalidate method="post" action="/login">
                     @csrf
 
                     <div class="position-relative mb-4">
                         <label for="email" class="form-label fs-base">Email</label>
-                        <input type="email" id="email" class="form-control form-control-lg" required>
+                        <input type="email" id="email" name="email" class="form-control form-control-lg" required>
                         <div class="invalid-feedback position-absolute start-0 top-100">Please enter a valid email address!</div>
                     </div>
                     <div class="mb-4">
                         <label for="password" class="form-label fs-base">Password</label>
                         <div class="password-toggle">
-                            <input type="password" id="password" class="form-control form-control-lg" required>
+                            <input type="password" id="password" name="password" class="form-control form-control-lg" required>
                             <label class="password-toggle-btn" aria-label="Show/hide password">
                                 <input class="password-toggle-check" type="checkbox">
                                 <span class="password-toggle-indicator"></span>

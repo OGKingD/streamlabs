@@ -258,7 +258,7 @@
 
 </main>
 
-@if(!in_array(request()->path(),["login","register","password/reset"]))
+@if(!preg_match('/(login?|register?|password*)/', request()->path())))
 <!-- Footer -->
 <footer class="footer pt-5 pb-4 pb-lg-5">
     <div class="container pt-lg-4">

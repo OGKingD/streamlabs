@@ -118,7 +118,7 @@
                             <input type="hidden" id="nonce" name="payment_method_nonce"/>
                             <input type="hidden" id="amount" name="amount"/>
                             <input type="hidden" id="subscription_type" name="subscription_type"/>
-                            <button type="submit" class="btn btn-primary shadow-primary btn-lg w-100">Pay</button>
+                            <button onclick="processPayment()" class="btn btn-primary shadow-primary btn-lg w-100">Pay</button>
                         </form>
                     </div>
                 </div>
@@ -604,6 +604,119 @@
 
 
 
+
+    @else
+        <!-- Header and footer -->
+        <section class="mt-3 pt-5 pb-4">
+            <div class="navbar card-header d-flex align-items-center justify-content-between w-100 p-sm-4 p-3">
+                <div class="d-flex align-items-center pe-3">
+                    <img src="assets/img/avatar/20.jpg" class="rounded-circle" width="40" alt="Albert Flores">
+                    <h6 class="mb-0 px-1 mx-2">{{auth()->user()->name}}</h6>
+                    <div class="bg-success rounded-circle" style="width: 8px; height: 8px;"></div>
+                </div>
+                <div class="d-flex">
+                    <button onclick="cancelSubscription()" type="button" class="btn btn-danger d-none d-sm-inline-flex px-2 px-sm-3 ms-1">
+                        <i class="bx bx-trash-alt fs-xl me-xl-2"></i>
+                        <span class=" d-xl-inline">Cancel Subscription</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-8">
+                    <div class="card text-center">
+                        <div class="card-header">Statistics</div>
+                        <div class="card-body">
+                            <h4 class="card-title">Special title treatment</h4>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                        <div class="card-footer fs-sm text-muted">3 days ago</div>
+                    </div>
+
+                    <div class="tab-content pt-1">
+                        <div class="tab-pane fade show active" id="preview11" role="tabpanel">
+                            <div class="row g-4" style="max-width: 58rem;">
+                                <div class="col-sm-6">
+                                    <div class="card text-white bg-primary">
+                                        <div class="card-header border-light">Header</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-white">Primary card title</h5>
+                                            <p class="card-text fs-sm">Some quick example text to build on the card title and make up the bulk of the card's content within card's body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card bg-secondary">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Secondary card title</h5>
+                                            <p class="card-text fs-sm">Some quick example text to build on the card title and make up the bulk of the card's content within card's body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card text-white bg-success">
+                                        <div class="card-header border-light">Header</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-white">Success card title</h5>
+                                            <p class="card-text fs-sm">Some quick example text to build on the card title and make up the bulk of the card's content within card's body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card text-white bg-danger">
+                                        <div class="card-header border-light">Header</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-white">Danger card title</h5>
+                                            <p class="card-text fs-sm">Some quick example text to build on the card title and make up the bulk of the card's content within card's body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card text-white bg-warning">
+                                        <div class="card-header border-light">Header</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-white">Warning card title</h5>
+                                            <p class="card-text fs-sm">Some quick example text to build on the card title and make up the bulk of the card's content within card's body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card text-white bg-info">
+                                        <div class="card-header border-light">Header</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-white">Info card title</h5>
+                                            <p class="card-text fs-sm">Some quick example text to build on the card title and make up the bulk of the card's content within card's body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card text-white bg-dark">
+                                        <div class="card-header border-light">Header</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-white">Dark card title</h5>
+                                            <p class="card-text fs-sm">Some quick example text to build on the card title and make up the bulk of the card's content within card's body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="card text-white bg-gradient-primary">
+                                        <div class="card-header border-light">Header</div>
+                                        <div class="card-body">
+                                            <h5 class="card-title text-white">Gradient card title</h5>
+                                            <p class="card-text fs-sm">Some quick example text to build on the card title and make up the bulk of the card's content within card's body.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
     @endif
 
     <script>
@@ -667,8 +780,8 @@
                             }
                             instance.requestPaymentMethod(function (err, payload) {
                                 // Submit payload.nonce to your server
-                                document.getElementById('openPaymentForm').click();
                                 document.querySelector('#nonce').value = "fake-valid-nonce";
+                                document.getElementById('openPaymentForm').click();
                                 swal.close();
 
                             });
@@ -682,6 +795,66 @@
             );
             swal.close();
 
+
+        }
+
+        function processPayment() {
+            swal({
+                title: "Processing Payment",
+                text: "Please wait!",
+                icon: "info",
+                buttons: false,
+                closeOnClickOutside: false,
+                closeOnEsc: false,
+            });
+            document.getElementById('payForm').submit();
+
+        }
+
+
+        function cancelSubscription() {
+            swal({
+                title: "Are You Sure You want to Cancel Subscription,These Action Cannot be Reversed!",
+                icon: "info",
+                buttons: true,
+                closeOnClickOutside: false,
+                closeOnEsc: false,
+            })
+                .then((value) =>{
+                console.log(value);
+                if (value){
+                    swal({
+                        title: "Canceling Subscription",
+                        text: "Please wait!",
+                        icon: "info",
+                        buttons: false,
+                        closeOnClickOutside: false,
+                    }).then(
+
+                        //generate token
+                        axios.post('/subscription/cancel')
+                            .then(function (response) {
+                                result = response.data;
+                                swal({
+                                    title: "Subscription Cancelled!",
+                                    icon: "success",
+                                    closeOnClickOutside: false,
+                                    closeOnEsc: false,
+                                }).then((value) => {
+                                    if (value){
+                                        location.reload();
+                                    }
+                                });
+                            })
+                            .catch(function (error) {
+                                console.log(error);
+                                swal.close();
+
+                            })
+                    );
+
+                }
+            })
 
         }
     </script>
