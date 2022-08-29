@@ -44,7 +44,7 @@
 
 
                                             <br>
-                                            <a class="btn btn-sm btn-primary" href="#">PRINT</a>
+                                            <a class="btn btn-sm btn-primary" href="/home">Go Home</a>
                                         </div>
 
                                     @endif
